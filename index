@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffa.Studio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;800&display=swap');
+        
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Work Sans', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .title {
+            font-weight: 800;
+            font-size: 48px;
+            margin-top: 10px;
+        }
+        .subtitle {
+            font-weight: 100;
+            font-size: 24px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.png" alt="Buffa.Studio Logo">
+    <div class="title">Buffa.Studio</div>
+    <div class="subtitle">coming soon</div>
+</body>
+</html>
