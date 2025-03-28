@@ -12,7 +12,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            background-color: #f4f4f4;
+            background-color: #ffffff; /* White background */
         }
         .image-container {
             display: flex;
@@ -23,24 +23,23 @@
             margin: 0 auto;
         }
         .image-container img {
-            width: 100%; /* Imaginile vor umple lățimea containerului */
+            width: 100%;
             height: auto;
         }
 
-        /* Media query pentru ecrane mari (desktop) */
+        /* Media query for large screens (desktop) */
         @media (min-width: 1024px) {
             .image-container {
-                width: 50%; /* Adăugăm margini și facem imaginile mai mici pe ecrane mari */
+                width: 40%; /* Adjusted from 50% to 40% */
             }
             .image-container img {
-                width: 100%; /* Imaginile vor rămâne pe 100% lățime din containerul care are margini */
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Conținutul paginii -->
     <div class="image-container">
         <img src="1.jpg" alt="Buffa Interiors">
     </div>
