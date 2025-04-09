@@ -1,80 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buffa.Interiors</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #ffffff; /* White background */
-        }
-        .image-container {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            width: 100%;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-        .image-container img {
-            width: 100%;
-            height: auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buffa.Interiors</title>
+  <!-- Load Work Sans with weights 300, 600, 800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Global Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      color: #000;
+      background: #A32322; /* RAL 3013 as page background */
+      line-height: 1.5;
+    }
 
-        /* Media query for large screens (desktop) */
-        @media (min-width: 1024px) {
-            .image-container {
-                width: 40%; /* Adjusted from 50% to 40% */
-            }
-            .image-container img {
-                width: 100%;
-            }
-        }
-    </style>
+    /* Header Section */
+    .header-section {
+      margin: 80px auto 30px; /* Equal top (80px for navbar) and bottom margin */
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 20vh; /* Reduced height since no box */
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Space between logo and title */
+    }
+    .header-logo {
+      width: 150px; /* Adjusted size for inline display */
+    }
+    .header-section h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff; /* White text to contrast with RAL 3013 background */
+      margin: 0; /* No extra margin */
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #A32322; /* RAL 3013 for navbar background */
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    .navbar-nav {
+      gap: 20px;
+    }
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff !important; /* White text for contrast on RAL 3013 background */
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #000 !important; /* Black on hover for contrast */
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 90vw;
+      margin: 0 auto;
+      padding: 0 20px; /* Remove top/bottom padding, let margins handle spacing */
+    }
+
+    /* Masonry Grid */
+    .masonry-grid {
+      column-count: 2;
+      column-gap: 30px;
+      margin: 30px 0; /* Equal top and bottom margin */
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin: 30px 0; /* Equal top and bottom margin */
+      background: #fff; /* White background for all masonry items */
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px; /* 30px padding on all sides, including bottom */
+      transition: transform 0.3s ease;
+    }
+    .masonry-item:hover {
+      transform: translateY(-5px);
+    }
+    .masonry-item h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #000; /* Black for section titles */
+      margin-bottom: 20px;
+    }
+    .masonry-item p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .masonry-item p:last-child {
+      margin-bottom: 0; /* Remove extra margin after last paragraph */
+    }
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    /* First Box (Despre Buffa.Interiors) - Remove Extra Top Margin */
+    .masonry-grid .masonry-item:first-child {
+      margin-top: 0; /* Remove extra top margin for the first box to align with the right box */
+    }
+
+    /* Despre Buffa.Interiors Section */
+    .masonry-item .bold-name {
+      font-weight: 800; /* Bold for names */
+    }
+
+    /* Servicii Section */
+    .servicii-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* Space between the three boxes */
+    }
+    .servicii-box {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      text-align: center;
+    }
+    .servicii-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .servicii-box h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    /* Etapele de Proiectare and Pașii Colaborării Subtitles */
+    .masonry-item .subtitle {
+      font-weight: 800; /* Bold for subtitles */
+      margin-bottom: 5px;
+    }
+    .masonry-item .modificari-acceptate {
+      font-size: 0.9rem; /* Smaller font size */
+      font-weight: 300; /* Lighter font weight */
+      margin-top: 10px;
+    }
+
+    /* Portfolio and Cere Oferta Sections */
+    .masonry-item.portfolio, .masonry-item.cere-oferta {
+      background: #fff; /* White background */
+      text-align: center;
+    }
+    .masonry-item.portfolio a, .masonry-item.cere-oferta a {
+      text-decoration: none;
+    }
+    .masonry-item.portfolio h2, .masonry-item.cere-oferta h2 {
+      font-size: 2.5rem; /* Larger title */
+      font-weight: 800;
+      color: #A32322; /* RAL 3013 text color */
+      margin: 0; /* No extra margin */
+    }
+
+    /* Contact Section (part of masonry grid) */
+    .contact-section {
+      text-align: center;
+      background: #A32322; /* RAL 3013 (red) background */
+      color: #fff;
+    }
+    .contact-section h2 {
+      color: #fff; /* White title for Contact section */
+    }
+    .contact-section p {
+      color: #fff;
+    }
+    .qr-code {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .masonry-grid {
+        column-count: 1;
+      }
+      .header-section {
+        min-height: 15vh;
+      }
+      .header-section h1 {
+        font-size: 2rem;
+      }
+      .header-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .header-logo {
+        width: 120px;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .masonry-item.portfolio h2, .masonry-item.cere-oferta h2 {
+        font-size: 2rem; /* Slightly smaller on mobile */
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <div class="image-container">
-        <img src="1.jpg" alt="Buffa Interiors">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#page2">Despre Buffa.Interiors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page3">Proiectul Tău</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page4">Servicii</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page5">Pașii Colaborării</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page6">Etapele de Proiectare</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page7">Ofertă & Tarife</a></li>
+          <li class="nav-item"><a class="nav-link" href="buffainteriorsportfolio.html">Portofoliu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page9">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="image-container">
-        <img src="2.jpg" alt="Buffa Interiors">
+  <!-- Header Section -->
+  <header class="header-section" id="page1">
+    <div class="header-content">
+      <img src="buffainteriorslogo.png" alt="Buffa Interiors Logo" class="header-logo">
+      <h1>Buffa.Interiors</h1>
     </div>
+  </header>
 
-    <div class="image-container">
-        <img src="3.jpg" alt="Buffa Interiors">
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Masonry Grid -->
+    <div class="masonry-grid">
+      <!-- PAGE 2: Despre Buffa.Interiors -->
+      <section id="page2" class="masonry-item">
+        <img src="TeamImage.jpg" alt="Imagine Echipă">
+        <h2>Despre Buffa.Interiors</h2>
+        <p>
+          Buffa.Interiors realizează proiecte de design interior personalizate, îmbinând estetica cu funcționalitatea.<br>
+          Printr-o viziune modernă și inspirație din designul contemporan, ne propunem să combinăm simplitatea formelor cu detalii subtile care să reflecte stilul și nevoile tale.
+        </p>
+        <p class="bold-name">Arh. Mircea Vasvari</p>
+        <p>
+          Fiind pasionat de arhitectură și curios să descopăr alte lumi, m-am format ca arhitect în Londra, unde am dobândit experiență profesională lucrând pentru companii cu reputație solidă, precum Caruso St John Architects, Stephen Taylor Architects și Morris+Co. În 2018, am fondat Buffa.Studio în România, un studio de arhitectură și dezvoltare imobiliară. Prin Buffa.Studio, atât independent cât și în colaborare cu biroul de arhitectură ASPAA din Constanța, am realizat proiecte rezidențiale, comerciale și turistice. Începând cu anul 2021, proiectele pentru România au fost gestionate de la distanță, formulă care mi-a permis să-mi îmbogățesc perspectiva globală asupra designului. După o perioadă în care am lucrat în Shanghai, unde am descoperit un mediu profesional dinamic, probabil cel mai rapid în care un arhitect se poate dezvolta, am decis, împreună cu sora mea, Alexandra Vasvari, să creăm Buffa.Interiors.
+        </p>
+        <p class="bold-name">Alexandra Vasvari</p>
+        <p>
+          Pasiunea pentru estetică și dorința de a crea și evolua constant m-au făcut să accept provocarea Buffa.Interiors. Experiența mea profesională completează viziunea asupra proiectelor de design interior. Sunt cofondatoarea NaturaLiving.ro, un shop online de home&deco care a adus pe piața variante de mobilier și decorațiuni din fibre naturale, ratan, bambus, iarbă de mare. Mai mult, experiența dobândită ca dezvoltator imobiliar mă ajută să am o viziune holistică asupra proiectelor, integrând toate aspectele esențiale, până la cele mai mici detalii.<br>
+          Cred în spații funcționale în care materialele naturale și organice aduc armonie și echilibru. Pentru mine, designul interior este conexiunea autentică între om și spațiul în care trăiește sau lucrează. Obiectivul meu este de a crea un spațiu care nu doar arată bine, ci se simte bine.
+        </p>
+      </section>
+
+      <!-- PAGE 3: Proiectul Tău -->
+      <section id="page3" class="masonry-item">
+        <img src="B2.jpg" alt="Imagine Dormitor">
+        <h2>Proiectul Tău</h2>
+        <p>
+          Ajută-ne să aflăm mai multe detalii despre proiectul tău. Completează informațiile solicitate sau trimite-le pe email, WhatsApp sau Instagram. Găsești datele de contact la finalul prezentării.
+        </p>
+        <p>Tipul proiectului (apartament, P+1, spațiu comercial, horeca)</p>
+        <p>Suprafața totală a proiectului</p>
+        <p>Locația proiectului</p>
+        <p>Numărul și tipul de camere (ex. living, bucătărie, dormitor, baie, dressing etc.)</p>
+        <p>Stadiul actual al proiectului (spațiu gol, renovare, parțial mobilat etc.)</p>
+        <p>Data estimată pentru începerea amenajării interioare</p>
+      </section>
+
+      <!-- PAGE 4: Servicii -->
+      <section id="page4" class="masonry-item">
+        <div class="servicii-container">
+          <div class="servicii-box first-box">
+            <img src="servicii1.jpg" alt="Consultanță și Concept de Design">
+            <h3>Consultanță și concept de design</h3>
+            <p>Construim împreună un concept unic de design, pornind de la nevoile tale, stil de viață și preferințe.</p>
+          </div>
+          <div class="servicii-box middle-box">
+            <img src="servicii2.jpg" alt="Planuri, Randări, Proiect Tehnic">
+            <h3>Planuri, randări, proiect tehnic</h3>
+            <p>Realizăm planuri detaliate și randări 3D astfel încât să ai o imagine clară despre design, foarte apropiată de rezultatul final.</p>
+          </div>
+          <div class="servicii-box">
+            <img src="servicii3.jpg" alt="Selecție de Materiale, Finisaje, Mobilier">
+            <h3>Selecție de materiale, finisaje, mobilier</h3>
+            <p>Te ghidăm în alegerea materialelor, de la finisaje sustenabile la piese de mobilier și decorațiuni. Prioritizăm materialele naturale și soluțiile durabile.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 5: Pașii Colaborării -->
+      <section id="page5" class="masonry-item">
+        <img src="Bedroom%202.jpg" alt="Imagine Dormitor Buffa">
+        <h2>Pașii Colaborării</h2>
+        <p class="subtitle">Ofertă personalizată & contract</p>
+        <p>Pe baza datelor despre proiect furnizate de tine, stabilim costurile și condițiile de colaborare.</p>
+        <p class="subtitle">Meeting pentru tema de proiectare</p>
+        <p>Discutăm nevoile, preferințele, stilul de viață și bugetul de care dispui pentru amenajarea interioară.</p>
+        <p class="subtitle">Măsurători la fața locului</p>
+        <p>Propunerea de design interior se realizează pe baza unui releveu precis. Vom măsura în detaliu la fața locului.</p>
+        <p class="subtitle">Planuri* & randări* & proiect tehnic*</p>
+        <p>Îți prezentăm propunerea vizuală a amenajării, iar după aprobarea fermă a randărilor finale, revenim cu proiectul tehnic cu toate detaliile necesare implementării.</p>
+        <p class="modificari-acceptate">*Modificări acceptate<br>Pentru a menține eficiența și claritatea procesului, oferim 2 modificări pe planuri și 2 modificări pe randări incluse în ofertă. Orice modificare suplimentară față de cele incluse va fi tarifată separat.</p>
+      </section>
+
+      <!-- PAGE 6: Etapele de Proiectare -->
+      <section id="page6" class="masonry-item">
+        <img src="Baie%201.jpg" alt="Imagine Baie Buffa">
+        <h2>Etapele de Proiectare</h2>
+        <p class="subtitle">Planuri</p>
+        <p>În prima etapă, ne vom concentra pe utilizarea optimă a spațiului, punând accent pe funcționalitate și pe armonizarea dorințelor tale cu structura existentă. Vom crea planuri 2D pentru a eficientiza procesul, iar odată ce le stabilim împreună, vom trece la următoarea etapă.</p>
+        <p class="subtitle">Randări</p>
+        <p>După ce stabilim planurile, trecem la următoarea etapă: vizualizarea conceptului prin randări. Aceste imagini vor ilustra materialele, culorile, texturile și atmosfera spațiului, oferindu-ți o perspectivă clară asupra rezultatului final.</p>
+        <p class="subtitle">Proiect Tehnic</p>
+        <p>După finalizarea și aprobarea randărilor, intrăm în etapa de proiectare tehnică. Vom pregăti toate planșele și detaliile necesare pentru implementare: planuri de execuție, specificații pentru finisaje, mobilier și instalații. Acest proiect va asigura o execuție precisă și eficientă, reducând riscurile de erori și optimizând procesul de amenajare.</p>
+        <p class="subtitle">Asistență Tehnică</p>
+        <p>Pe parcursul execuției, oferim suport pentru clarificarea detaliilor tehnice și a soluțiilor propuse în proiect. Vom răspunde întrebărilor, vom oferi îndrumare și vom verifica aspectele necesare, însă nu ne ocupăm de organizarea șantierului, coordonarea echipelor sau gestionarea materialelor. Asistența tehnică nu reprezintă management de proiect, ci doar un sprijin pentru implementarea corectă a designului.</p>
+      </section>
+
+      <!-- PAGE 7: Ofertă & Tarife -->
+      <section id="page7" class="masonry-item">
+        <img src="Living-2e.jpg" alt="Imagine Living Buffa">
+        <h2>Ofertă & Tarife</h2>
+        <p>
+          Oferta Buffa.Interiors variază în funcție de tipul proiectului, suprafața de amenajat și complexitatea amenajării.
+        </p>
+        <p>
+          Îți pregătim o ofertă personalizată, pe baza detaliilor despre proiect, pe care ni le poți trimite folosind formularul "Cere o ofertă".
+        </p>
+      </section>
+
+      <!-- PAGE 7-5: Cere o Ofertă -->
+      <section id="page7-5" class="masonry-item cere-oferta">
+        <a href="buffainteriorsoferta.html">
+          <h2>Cere o Ofertă</h2>
+        </a>
+      </section>
+
+      <!-- PAGE 8: Portofoliu -->
+      <section id="page8" class="masonry-item portfolio">
+        <a href="buffainteriorsportfolio.html">
+          <h2>Lucrările Noastre</h2>
+        </a>
+      </section>
+
+      <!-- PAGE 9: Contact -->
+      <section id="page9" class="masonry-item contact-section">
+        <img src="buffacontactqr-white.png" alt="Cod QR">
+        <h2>Contactează Buffa.Interiors</h2>
+        <p><strong>Telefon</strong><br>+40 723319664</p>
+        <p><strong>Email</strong><br>interiors@buffa.studio</p>
+        <p><strong>Instagram</strong><br>@buffa.interiors</p>
+      </section>
     </div>
+  </div>
 
-    <div class="image-container">
-        <img src="4.jpg" alt="Buffa Interiors">
-    </div>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div class="image-container">
-        <img src="5.jpg" alt="Buffa Interiors">
-    </div>
+  <!-- Custom JavaScript for Centered Scrolling -->
+  <script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        
+        // Check if the link is an anchor link (starts with #)
+        if (targetId.startsWith('#')) {
+          e.preventDefault(); // Prevent default anchor behavior for in-page links
+          
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            // Special case for "Servicii" link (#page4)
+            if (targetId === '#page4') {
+              // Target the first box (first .servicii-box)
+              const firstBox = targetSection.querySelector('.first-box');
+              if (firstBox) {
+                const firstBoxRect = firstBox.getBoundingClientRect();
+                const firstBoxTop = firstBoxRect.top + window.scrollY;
+                const firstBoxHeight = firstBoxRect.height;
 
-    <div class="image-container">
-        <img src="6.jpg" alt="Buffa Interiors">
-    </div>
+                // Calculate the scroll position to center the first box vertically
+                const windowHeight = window.innerHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const scrollPosition = firstBoxTop - (windowHeight / 2) + (firstBoxHeight / 2) + (navbarHeight / 2);
 
-    <div class="image-container">
-        <img src="7.jpg" alt="Buffa Interiors">
-    </div>
+                window.scrollTo({
+                  top: scrollPosition,
+                  behavior: 'smooth'
+                });
+              }
+            } else {
+              // For other sections, center the h2 element
+              const sectionTitle = targetSection.querySelector('h2');
+              if (sectionTitle) {
+                const titleRect = sectionTitle.getBoundingClientRect();
+                const titleTop = titleRect.top + window.scrollY;
+                const titleHeight = titleRect.height;
 
-    <div class="image-container">
-        <img src="8.jpg" alt="Buffa Interiors">
-    </div>
+                const windowHeight = window.innerHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const scrollPosition = titleTop - (windowHeight / 2) + (titleHeight / 2) + (navbarHeight / 2);
 
-    <div class="image-container">
-        <img src="9.jpg" alt="Buffa Interiors">
-    </div>
-
+                window.scrollTo({
+                  top: scrollPosition,
+                  behavior: 'smooth'
+                });
+              } else {
+                // Fallback: Scroll to the top of the section if no h2 is found
+                const sectionRect = targetSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top + window.scrollY;
+                window.scrollTo({
+                  top: sectionTop - navbarHeight,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }
+        }
+        // If the link does not start with # (e.g., a page link like buffainteriorsportfolio.html), let the default behavior proceed
+      });
+    });
+  </script>
 </body>
 </html>

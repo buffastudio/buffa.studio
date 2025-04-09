@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cere o Ofertă</title>
+  <!-- Load Work Sans with weights 300, 600, 800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Global Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      color: #000;
+      background: #A32322; /* RAL 3013 as page background */
+      line-height: 1.5;
+    }
+
+    /* Header Section */
+    .header-section {
+      margin: 80px auto 30px; /* Equal top (80px for navbar) and bottom margin */
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 20vh; /* Reduced height since no box */
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Space between logo and title */
+    }
+    .header-logo {
+      width: 150px; /* Adjusted size for inline display */
+    }
+    .header-section h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff; /* White text to contrast with RAL 3013 background */
+      margin: 0; /* No extra margin */
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #A32322; /* RAL 3013 for navbar background */
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    .navbar-nav {
+      gap: 20px;
+    }
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff !important; /* White text for contrast on RAL 3013 background */
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #000 !important; /* Black on hover for contrast */
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 90vw;
+      margin: 0 auto;
+      padding: 0 20px; /* Remove top/bottom padding, let margins handle spacing */
+    }
+
+    /* Form Section */
+    .form-section {
+      margin: 30px auto; /* Center the form with auto margins */
+      width: 50%; /* 50% width for large screens */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+    }
+    .form-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .submit-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #A32322; /* RAL 3013 background */
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .submit-button:hover {
+      background: #8b1e1d; /* Slightly darker RAL 3013 for hover */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .form-section {
+        width: 95%; /* 95% width for small screens */
+      }
+      .header-section {
+        min-height: 15vh;
+      }
+      .header-section h1 {
+        font-size: 2rem;
+      }
+      .header-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .header-logo {
+        width: 120px;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .submit-button {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page2">Despre Buffa.Interiors</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page3">Proiectul Tău</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page4">Servicii</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page5">Pașii Colaborării</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page6">Etapele de Proiectare</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page7">Ofertă & Tarife</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page8">Portofoliu</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page9">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="header-section">
+    <div class="header-content">
+      <img src="buffainteriorslogo.png" alt="Buffa Interiors Logo" class="header-logo">
+      <h1>Cere o ofertă</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2>Completează detaliile proiectului tău</h2>
+      <form action="mailto:interiors@buffa.studio" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="tip-proiect">Tipul proiectului</label>
+          <select id="tip-proiect" name="Tipul proiectului" required>
+            <option value="" disabled selected>Alege tipul proiectului</option>
+            <option value="apartament">Apartament</option>
+            <option value="P+1">P+1</option>
+            <option value="spatiu-comercial">Spațiu comercial</option>
+            <option value="horeca">HoReCa</option>
+            <option value="altul">Altul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="suprafata">Suprafața totală a proiectului (mp)</label>
+          <input type="number" id="suprafata" name="Suprafata totala a proiectului (mp)" placeholder="Ex. 50 mp" required>
+        </div>
+        <div class="form-group">
+          <label for="locatie">Locația proiectului</label>
+          <input type="text" id="locatie" name="Locatia proiectului" placeholder="Ex. București, Sector 1" required>
+        </div>
+        <div class="form-group">
+          <label for="camere">Numărul și tipul de camere</label>
+          <textarea id="camere" name="Numarul si tipul de camere" placeholder="Ex. living, bucătărie, dormitor, baie, dressing" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="stadiu">Stadiul actual al proiectului</label>
+          <select id="stadiu" name="Stadiul actual al proiectului" required>
+            <option value="" disabled selected>Alege stadiul proiectului</option>
+            <option value="spatiu-gol">Spațiu gol</option>
+            <option value="renovare">Renovare</option>
+            <option value="partial-mobilat">Parțial mobilat</option>
+            <option value="altul">Altul</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="data-incepere">Data estimată pentru începerea amenajării interioare</label>
+          <input type="date" id="data-incepere" name="Data estimata pentru inceperea amenajarii interioare" required>
+        </div>
+        <div class="form-group">
+          <label for="nume-contact">Nume persoană de contact</label>
+          <input type="text" id="nume-contact" name="Nume persoana de contact" placeholder="Ex. Maria Popescu" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adresa de e-mail pentru primirea ofertei</label>
+          <input type="email" id="email" name="Adresa de e-mail pentru primirea ofertei" placeholder="Ex. maria.popescu@email.com" required>
+        </div>
+        <button type="submit" class="submit-button">Solicită oferta Buffa.Interiors</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucrările Buffa.Interiors</title>
+  <!-- Load Work Sans with weights 300, 600, 800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Global Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      color: #000;
+      background: #A32322; /* RAL 3013 as page background */
+      line-height: 1.5;
+    }
+
+    /* Header Section */
+    .header-section {
+      margin: 80px auto 30px; /* Equal top (80px for navbar) and bottom margin */
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 20vh; /* Reduced height since no box */
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Space between logo and title */
+    }
+    .header-logo {
+      width: 150px; /* Adjusted size for inline display */
+    }
+    .header-section h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff; /* White text to contrast with RAL 3013 background */
+      margin: 0; /* No extra margin */
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #A32322; /* RAL 3013 for navbar background */
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    .navbar-nav {
+      gap: 20px;
+    }
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff !important; /* White text for contrast on RAL 3013 background */
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #000 !important; /* Black on hover for contrast */
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 90vw;
+      margin: 0 auto;
+      padding: 0 20px; /* Remove top/bottom padding, let margins handle spacing */
+    }
+
+    /* Masonry Grid */
+    .masonry-grid {
+      column-count: 2;
+      column-gap: 30px;
+      margin: 30px 0; /* Equal top and bottom margin */
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin: 30px 0; /* Equal top and bottom margin */
+      transition: transform 0.3s ease;
+    }
+    .masonry-item:hover {
+      transform: translateY(-5px);
+    }
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px; /* Rounded corners for images */
+      display: block; /* Remove any inline spacing */
+    }
+
+    /* First Box - Remove Extra Top Margin */
+    .masonry-grid .masonry-item:first-child {
+      margin-top: 0; /* Remove extra top margin for the first box to align with the right box */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .masonry-grid {
+        column-count: 1;
+      }
+      .header-section {
+        min-height: 15vh;
+      }
+      .header-section h1 {
+        font-size: 2rem;
+      }
+      .header-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .header-logo {
+        width: 120px;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page2">Despre Buffa.Interiors</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page3">Proiectul Tău</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page4">Servicii</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page5">Pașii Colaborării</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page6">Etapele de Proiectare</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page7">Ofertă & Tarife</a></li>
+          <li class="nav-item"><a class="nav-link" href="buffainteriorsportfolio.html">Portofoliu</a></li>
+          <li class="nav-item"><a class="nav-link" href="interiors.html#page9">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="header-section">
+    <div class="header-content">
+      <img src="buffainteriorslogo.png" alt="Buffa Interiors Logo" class="header-logo">
+      <h1>Lucrările Buffa.Interiors</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Masonry Grid -->
+    <div class="masonry-grid">
+      <!-- Image Boxes -->
+      <div class="masonry-item">
+        <img src="buffa1.jpg" alt="Lucrare Buffa 1">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa2.jpg" alt="Lucrare Buffa 2">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa3.jpg" alt="Lucrare Buffa 3">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa4.jpg" alt="Lucrare Buffa 4">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa5.jpg" alt="Lucrare Buffa 5">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa6.jpg" alt="Lucrare Buffa 6">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa7.jpg" alt="Lucrare Buffa 7">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa8.jpg" alt="Lucrare Buffa 8">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa9.jpg" alt="Lucrare Buffa 9">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa10.jpg" alt="Lucrare Buffa 10">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa11.jpg" alt="Lucrare Buffa 11">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa12.jpg" alt="Lucrare Buffa 12">
+      </div>
+      <div class="masonry-item">
+        <img src="buffa13.jpg" alt="Lucrare Buffa 13">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Custom JavaScript for Centered Scrolling -->
+   <script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        
+        // Check if the link is an anchor link (starts with #)
+        if (targetId.startsWith('#')) {
+          e.preventDefault(); // Prevent default anchor behavior for in-page links
+          
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            // Special case for "Servicii" link (#page4)
+            if (targetId === '#page4') {
+              // Target the first box (first .servicii-box)
+              const firstBox = targetSection.querySelector('.first-box');
+              if (firstBox) {
+                const firstBoxRect = firstBox.getBoundingClientRect();
+                const firstBoxTop = firstBoxRect.top + window.scrollY;
+                const firstBoxHeight = firstBoxRect.height;
+
+                // Calculate the scroll position to center the first box vertically
+                const windowHeight = window.innerHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const scrollPosition = firstBoxTop - (windowHeight / 2) + (firstBoxHeight / 2) + (navbarHeight / 2);
+
+                window.scrollTo({
+                  top: scrollPosition,
+                  behavior: 'smooth'
+                });
+              }
+            } else {
+              // For other sections, center the h2 element
+              const sectionTitle = targetSection.querySelector('h2');
+              if (sectionTitle) {
+                const titleRect = sectionTitle.getBoundingClientRect();
+                const titleTop = titleRect.top + window.scrollY;
+                const titleHeight = titleRect.height;
+
+                const windowHeight = window.innerHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const scrollPosition = titleTop - (windowHeight / 2) + (titleHeight / 2) + (navbarHeight / 2);
+
+                window.scrollTo({
+                  top: scrollPosition,
+                  behavior: 'smooth'
+                });
+              } else {
+                // Fallback: Scroll to the top of the section if no h2 is found
+                const sectionRect = targetSection.getBoundingClientRect();
+                const sectionTop = sectionRect.top + window.scrollY;
+                window.scrollTo({
+                  top: sectionTop - navbarHeight,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }
+        }
+        // If the link does not start with # (e.g., a page link like buffainteriorsportfolio.html), let the default behavior proceed
+      });
+    });
+  </script>
+</body>
+</html>
+</body>
+</html>
