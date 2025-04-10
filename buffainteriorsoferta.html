@@ -81,7 +81,7 @@
 
     /* Main Content */
     .main-content {
-      max-width: 90vw;
+      max-width: 96vw;
       margin: 0 auto;
       padding: 0 20px; /* Remove top/bottom padding, let margins handle spacing */
     }
@@ -89,7 +89,7 @@
     /* Form Section */
     .form-section {
       margin: 30px auto; /* Center the form with auto margins */
-      width: 50%; /* 50% width for large screens */
+      width: 65%; /* 50% width for large screens */
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -129,8 +129,8 @@
       display: block;
       width: 100%;
       padding: 15px;
-      background: #A32322; /* RAL 3013 background */
-      color: #fff;
+      background: var(--col4); /* RAL 3013 background */
+      color: var(--col2);
       border: none;
       border-radius: 10px;
       font-size: 1.5rem;
@@ -140,13 +140,13 @@
       transition: background 0.3s ease;
     }
     .submit-button:hover {
-      background: #8b1e1d; /* Slightly darker RAL 3013 for hover */
+      background: var(--col3); /* Slightly darker RAL 3013 for hover */
     }
 
     /* Responsive Adjustments */
-    @media (max-width: 992px) {
+    @media (max-width: 990px) {
       .form-section {
-        width: 95%; /* 95% width for small screens */
+        width: 98%; /* 95% width for small screens */
       }
       .header-section {
         min-height: 15vh;
