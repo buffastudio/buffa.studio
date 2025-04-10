@@ -18,11 +18,17 @@
     html {
       scroll-behavior: smooth;
     }
+    :root {
+    --col1: #000;     /* black */
+    --col2: #FFF;  /* white */
+    --col3: #C2856D;  /* light colour */
+    --col4: #A32322;  /* strong colour */
+}
     body {
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
       color: #000;
-      background: #A32322; /* RAL 3013 as page background */
+      background: var(--col3); /* RAL 3013 as page background */
       line-height: 1.5;
     }
 
@@ -42,12 +48,12 @@
       gap: 20px; /* Space between logo and title */
     }
     .header-logo {
-      width: 150px; /* Adjusted size for inline display */
+      width: 100px; /* Adjusted size for inline display */
     }
     .header-section h1 {
       font-size: 2.5rem;
       font-weight: 800;
-      color: #fff; /* White text to contrast with RAL 3013 background */
+      color: var(--col2); /* White text to contrast with RAL 3013 background */
       margin: 0; /* No extra margin */
     }
 
@@ -56,7 +62,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: #A32322; /* RAL 3013 for navbar background */
+      background: var(--col3); /* RAL 3013 for navbar background */
       z-index: 1000;
       padding: 15px 0;
     }
@@ -66,11 +72,11 @@
     .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
-      color: #fff !important; /* White text for contrast on RAL 3013 background */
+      color: var(--col2); !important; /* White text for contrast on RAL 3013 background */
       transition: color 0.3s ease;
     }
     .nav-link:hover {
-      color: #000 !important; /* Black on hover for contrast */
+      color: var(--col4) !important; /* Black on hover for contrast */
     }
 
     /* Main Content */

@@ -18,11 +18,17 @@
     html {
       scroll-behavior: smooth;
     }
+    :root {
+    --col1: #000;     /* black */
+    --col2: #FFF;  /* white */
+    --col3: #C2856D;  /* light colour */
+    --col4: #A32322;  /* strong colour */
+}
     body {
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
-      color: #000;
-      background: #A32322; /* RAL 3013 as page background */
+      color: var(--col1);
+      background: var(--col3); /* RAL 3013 as page background */
       line-height: 1.5;
     }
 
@@ -42,12 +48,12 @@
       gap: 20px; /* Space between logo and title */
     }
     .header-logo {
-      width: 150px; /* Adjusted size for inline display */
+      width: 100px; /* Adjusted size for inline display */
     }
     .header-section h1 {
       font-size: 2.5rem;
       font-weight: 800;
-      color: #fff; /* White text to contrast with RAL 3013 background */
+      color: var(--col2); /* White text to contrast with RAL 3013 background */
       margin: 0; /* No extra margin */
     }
 
@@ -56,7 +62,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: #A32322; /* RAL 3013 for navbar background */
+      background: var(--col3); /* before #A32322 RAL 3013 for navbar background, now RAL 3012 */
       z-index: 1000;
       padding: 15px 0;
     }
@@ -66,16 +72,16 @@
     .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
-      color: #fff !important; /* White text for contrast on RAL 3013 background */
+      color:var(--col2) !important; /* White text for contrast on RAL 3013 background */
       transition: color 0.3s ease;
     }
     .nav-link:hover {
-      color: #000 !important; /* Black on hover for contrast */
+      color:var(--col4) !important; /* Black on hover for contrast */
     }
 
     /* Main Content */
     .main-content {
-      max-width: 90vw;
+      max-width: 96vw;
       margin: 0 auto;
       padding: 0 20px; /* Remove top/bottom padding, let margins handle spacing */
     }
@@ -89,8 +95,8 @@
     .masonry-item {
       break-inside: avoid;
       margin: 30px 0; /* Equal top and bottom margin */
-      background: #fff; /* White background for all masonry items */
-      border-radius: 10px;
+      background:var(--col2); /* White background for all masonry items */
+      border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       padding: 30px; /* 30px padding on all sides, including bottom */
       transition: transform 0.3s ease;
@@ -99,15 +105,15 @@
       transform: translateY(-5px);
     }
     .masonry-item h2 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: #000; /* Black for section titles */
+      color:var(--col1); /* Black for section titles */
       margin-bottom: 20px;
     }
     .masonry-item p {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 300;
-      color: #000;
+      color:var(--col1);
       margin-bottom: 10px;
     }
     .masonry-item p:last-child {
@@ -116,8 +122,14 @@
     .masonry-item img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 10px;
       margin-bottom: 20px;
+    }
+    .masonry-item pss {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color:var(--col2);
+      margin-bottom: 10px;
     }
 
     /* First Box (Despre Buffa.Interiors) - Remove Extra Top Margin */
@@ -137,22 +149,23 @@
       gap: 30px; /* Space between the three boxes */
     }
     .servicii-box {
-      background: #fff;
+      background: var(--col3);
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       padding: 30px;
+      color:var(--col2);
       text-align: center;
     }
     .servicii-box img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 10px;
       margin-bottom: 20px;
     }
     .servicii-box h3 {
       font-size: 1.5rem;
       font-weight: 800;
-      color: #000;
+      color:var(--col2);
       margin-bottom: 10px;
     }
 
@@ -162,37 +175,37 @@
       margin-bottom: 5px;
     }
     .masonry-item .modificari-acceptate {
-      font-size: 0.9rem; /* Smaller font size */
+      font-size: 0.8rem; /* Smaller font size */
       font-weight: 300; /* Lighter font weight */
       margin-top: 10px;
     }
 
     /* Portfolio and Cere Oferta Sections */
     .masonry-item.portfolio, .masonry-item.cere-oferta {
-      background: #fff; /* White background */
+      background:var(--col4); /* White background */
       text-align: center;
     }
     .masonry-item.portfolio a, .masonry-item.cere-oferta a {
       text-decoration: none;
     }
     .masonry-item.portfolio h2, .masonry-item.cere-oferta h2 {
-      font-size: 2.5rem; /* Larger title */
+      font-size: 2rem; /* Larger title */
       font-weight: 800;
-      color: #A32322; /* RAL 3013 text color */
+      color:var(--col2); /* RAL 3013 text color */
       margin: 0; /* No extra margin */
     }
 
     /* Contact Section (part of masonry grid) */
     .contact-section {
       text-align: center;
-      background: #A32322; /* RAL 3013 (red) background */
-      color: #fff;
+      background:var(--col3); /* RAL 3013 (red) background */
+      color: var(--col2);
     }
     .contact-section h2 {
-      color: #fff; /* White title for Contact section */
+      color: var(--col2); /* White title for Contact section */
     }
     .contact-section p {
-      color: #fff;
+      color: var(--col2)
     }
     .qr-code {
       max-width: 200px;
@@ -200,7 +213,7 @@
     }
 
     /* Responsive Adjustments */
-    @media (max-width: 992px) {
+    @media (max-width: 750px) {
       .masonry-grid {
         column-count: 1;
       }
@@ -302,17 +315,17 @@
           <div class="servicii-box first-box">
             <img src="servicii1.jpg" alt="Consultanță și Concept de Design">
             <h3>Consultanță și concept de design</h3>
-            <p>Construim împreună un concept unic de design, pornind de la nevoile tale, stil de viață și preferințe.</p>
+            <pss>Construim împreună un concept unic de design, pornind de la nevoile tale, stil de viață și preferințe.</pss>
           </div>
           <div class="servicii-box middle-box">
             <img src="servicii2.jpg" alt="Planuri, Randări, Proiect Tehnic">
             <h3>Planuri, randări, proiect tehnic</h3>
-            <p>Realizăm planuri detaliate și randări 3D astfel încât să ai o imagine clară despre design, foarte apropiată de rezultatul final.</p>
+            <pss>Realizăm planuri detaliate și randări 3D astfel încât să ai o imagine clară despre design, foarte apropiată de rezultatul final.</pss>
           </div>
           <div class="servicii-box">
             <img src="servicii3.jpg" alt="Selecție de Materiale, Finisaje, Mobilier">
             <h3>Selecție de materiale, finisaje, mobilier</h3>
-            <p>Te ghidăm în alegerea materialelor, de la finisaje sustenabile la piese de mobilier și decorațiuni. Prioritizăm materialele naturale și soluțiile durabile.</p>
+            <pss>Te ghidăm în alegerea materialelor, de la finisaje sustenabile la piese de mobilier și decorațiuni. Prioritizăm materialele naturale și soluțiile durabile.</pss>
           </div>
         </div>
       </section>
