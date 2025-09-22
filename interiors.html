@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buffa.Interiors</title>
-  <!-- Load Work Sans with weights 300, 600, 800 -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Load Work Sans with weights 100, 600, 800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;600;800&display=swap" rel="stylesheet">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -21,12 +21,12 @@
     :root {
     --col1: #000;     /* black */
     --col2: #FFF;  /* white */
-    --col3: #C2856D;  /* light colour */
-    --col4: #A32322;  /* strong colour */
+    --col3: #FFF;  /* light colour */
+    --col4: #FFF;  /* strong colour */
 }
     body {
       font-family: 'Work Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 100;
       color: var(--col1);
       background: var(--col3); /* RAL 3013 as page background */
       line-height: 1.5;
@@ -53,7 +53,7 @@
     .header-section h1 {
       font-size: 2.5rem;
       font-weight: 800;
-      color: var(--col2); /* White text to contrast with RAL 3013 background */
+      color: var(--col1); /* White text to contrast with RAL 3013 background */
       margin: 0; /* No extra margin */
     }
 
@@ -72,7 +72,7 @@
     .nav-link {
       font-weight: 600;
       font-size: 0.9rem;
-      color:var(--col2) !important; /* White text for contrast on RAL 3013 background */
+      color:var(--col1) !important; /* White text for contrast on RAL 3013 background */
       transition: color 0.3s ease;
     }
     .nav-link:hover {
@@ -96,7 +96,7 @@
       break-inside: avoid;
       margin: 30px 0; /* Equal top and bottom margin */
       background:var(--col2); /* White background for all masonry items */
-      border-radius: 15px;
+      border-radius: 2px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       padding: 30px; /* 30px padding on all sides, including bottom */
       transition: transform 0.3s ease;
@@ -112,7 +112,7 @@
     }
     .masonry-item p {
       font-size: 0.8rem;
-      font-weight: 300;
+      font-weight: 100;
       color:var(--col1);
       margin-bottom: 10px;
     }
@@ -122,13 +122,13 @@
     .masonry-item img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 1px;
       margin-bottom: 20px;
     }
     .masonry-item pss {
       font-size: 0.8rem;
-      font-weight: 300;
-      color:var(--col2);
+      font-weight: 100;
+      color:var(--col1);
       margin-bottom: 10px;
     }
 
@@ -150,22 +150,22 @@
     }
     .servicii-box {
       background: var(--col3);
-      border-radius: 10px;
+      border-radius: 1px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       padding: 30px;
-      color:var(--col2);
+      color:var(--col1);
       text-align: center;
     }
     .servicii-box img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 1px;
       margin-bottom: 20px;
     }
     .servicii-box h3 {
       font-size: 1.5rem;
       font-weight: 800;
-      color:var(--col2);
+      color:var(--col1);
       margin-bottom: 10px;
     }
 
@@ -176,7 +176,7 @@
     }
     .masonry-item .modificari-acceptate {
       font-size: 0.8rem; /* Smaller font size */
-      font-weight: 300; /* Lighter font weight */
+      font-weight: 100; /* Lighter font weight */
       margin-top: 10px;
     }
 
@@ -191,7 +191,7 @@
     .masonry-item.portfolio h2, .masonry-item.cere-oferta h2 {
       font-size: 2rem; /* Larger title */
       font-weight: 800;
-      color:var(--col2); /* RAL 3013 text color */
+      color:var(--col1); /* RAL 3013 text color */
       margin: 0; /* No extra margin */
     }
 
@@ -202,13 +202,13 @@
       color: var(--col2);
     }
     .contact-section h2 {
-      color: var(--col2); /* White title for Contact section */
+      color: var(--col1); /* White title for Contact section */
     }
     .contact-section p {
-      color: var(--col2)
+      color: var(--col1)
     }
     .qr-code {
-      max-width: 200px;
+      max-width: 100px;
       margin: 20px auto;
     }
 
@@ -267,7 +267,7 @@
   <header class="header-section" id="page1">
     <div class="header-content">
       <img src="buffainteriorslogo.png" alt="Buffa Interiors Logo" class="header-logo">
-      <h1>Buffa.Interiors</h1>
+      <h1>buffa.interiors</h1>
     </div>
   </header>
 
@@ -275,10 +275,10 @@
   <div class="main-content">
     <!-- Masonry Grid -->
     <div class="masonry-grid">
-      <!-- PAGE 2: Despre Buffa.Interiors -->
+      <!-- PAGE 2: Despre buffa.interiors -->
       <section id="page2" class="masonry-item">
         <img src="TeamImage.jpg" alt="Imagine Echipă">
-        <h2>Despre Buffa.Interiors</h2>
+        <h2>Despre buffa.interiors</h2>
         <p>
           Buffa.Interiors realizează proiecte de design interior personalizate, îmbinând estetica cu funcționalitatea.<br>
           Printr-o viziune modernă și inspirație din designul contemporan, ne propunem să combinăm simplitatea formelor cu detalii subtile care să reflecte stilul și nevoile tale.
@@ -388,7 +388,7 @@
       <!-- PAGE 9: Contact -->
       <section id="page9" class="masonry-item contact-section">
         <img src="buffacontactqr-white.png" alt="Cod QR">
-        <h2>Contactează Buffa.Interiors</h2>
+        <h2>Contactează buffa.interiors</h2>
         <p><strong>Telefon</strong><br>+40 723319664</p>
         <p><strong>Email</strong><br>interiors@buffa.studio</p>
         <p><strong>Instagram</strong><br>@buffa.interiors</p>
