@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>buffa.interiors — Office</title>
-  <meta name="description" content="buffa.interiors — birou de arhitectură & interioare" />
+  <title>buffa.interiors — Servicii</title>
+  <meta name="description" content="Servicii — buffa.interiors" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;900&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#ffffff; --fg:#0a0a0a;
@@ -17,12 +17,10 @@
     body{
       margin:0; background:var(--bg); color:var(--fg);
       font-family:'Work Sans', system-ui, sans-serif;
-      font-weight:100; /* ultra light */
-      font-size:15px; line-height:1.6;
+      font-weight:100; font-size:15px; line-height:1.6;
     }
     a{ color:inherit; text-decoration:none; }
 
-    /* Header */
     header{ position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:#fff; border-bottom:none; box-shadow:none; }
     .nav{ display:flex; align-items:center; justify-content:space-between; min-height:68px; padding:0 var(--pad); }
     .brand{ font-weight:900; font-size:22px; }
@@ -30,7 +28,6 @@
     .menu a{ opacity:.85; padding:8px 6px; font-weight:100; }
     .menu a:hover{ opacity:1; }
 
-    /* Burger only on lg and below */
     .burger{ display:none; font-size:26px; background:none; border:none; cursor:pointer; }
     @media screen and (max-width: 1024px){
       .menu{ display:none; }
@@ -38,19 +35,19 @@
       .carousel, .caption10{ width:85% !important; }
     }
 
-    /* Drawer în flux (nu fixed), împinge conținutul când e deschis */
     .drawer{ width:100%; background:var(--bg); padding:16px var(--pad); display:block; max-height:0; overflow:hidden; transition:max-height 300ms ease; border-top:none; }
     .drawer.open{ max-height:60vh; }
     .drawer a{ display:block; padding:14px 0; border-bottom:none; }
 
-    /* Carousel */
     .carousel{ position:relative; width:35%; margin:40px auto 0; height:clamp(260px, 40vh, 600px); overflow:hidden; }
     .track{ display:flex; height:100%; will-change: transform; }
     .slide{ flex:0 0 100%; display:flex; align-items:center; justify-content:center; }
-    .slide img{ max-height:100%; max-width:100%; object-fit:contain; margin:0 auto; }
+    .slide img{ width:100%; height:100%; object-fit:contain; display:block; }
 
-    .caption10{ width:35%; margin:20px auto; text-align:justify; font-weight:100; font-size:14.5px; line-height:1.75; }
-    .caption10 p{ margin:0 0 1em; }
+    .caption10{ width:35%; margin:20px auto; text-align:justify; font-weight:100; font-size:15px; line-height:1.6; }
+    .caption10 p{ margin:0 0 0.4em; }
+    .caption10 h2, .caption10 h3{ font-weight:300; margin:0.6em 0 0.4em; font-size:15px; }
+    .caption10 p.small-note{ font-size:70%; line-height:1.4; }
     .caption10::after{ content:"\A\A\A\A\A"; white-space:pre; display:block; }
   </style>
 </head>
@@ -70,7 +67,6 @@
     </div>
   </header>
 
-  <!-- Drawer mutat în afara header-ului ca să împingă conținutul -->
   <div id="drawer" class="drawer" hidden>
     <a href="proiecte.html" onclick="toggleDrawer(false)">Proiecte</a>
     <a href="servicii.html" onclick="toggleDrawer(false)">Servicii</a>
@@ -96,13 +92,16 @@
       </div>
     </div>
     <div class="caption10">
-      <p>Buffa.Interiors realizează proiecte de design interior personalizate, îmbinând estetica cu funcționalitatea.</p>
-      <p>Printr-o viziune modernă și inspirație din designul contemporan, ne propunem să combinăm simplitatea formelor cu detalii subtile care să reflecte stilul și nevoile tale.</p>
-      <p><strong>Arh. Mircea Vasvari</strong></p>
-      <p>Fiind pasionat de arhitectură și curios să descopăr alte lumi, m-am format ca arhitect în Londra, unde am dobândit experiență profesională lucrând pentru companii cu reputație solidă, precum Caruso St John Architects, Stephen Taylor Architects și Morris+Co. În 2018, am fondat Buffa.Studio în România, un studio de arhitectură și dezvoltare imobiliară. Prin Buffa.Studio, atât independent cât și în colaborare cu biroul de arhitectură ASPAA din Constanța, am realizat proiecte rezidențiale, comerciale și turistice. Începând cu anul 2021, proiectele pentru România au fost gestionate de la distanță, formulă care mi-a permis să-mi îmbogățesc perspectiva globală asupra designului. După o perioadă în care am lucrat în Shanghai, unde am descoperit un mediu profesional dinamic, probabil cel mai rapid în care un arhitect se poate dezvolta, am decis, împreună cu sora mea, Alexandra Vasvari, să creăm Buffa.Interiors.</p>
-      <p><strong>Alexandra Vasvari</strong></p>
-      <p>Pasiunea pentru estetică și dorința de a crea și evolua constant m-au făcut să accept provocarea Buffa.Interiors. Experiența mea profesională completează viziunea asupra proiectelor de design interior. Sunt cofondatoarea NaturaLiving.ro, un shop online de home&deco care a adus pe piața variante de mobilier și decorațiuni din fibre naturale, ratan, bambus, iarbă de mare. Mai mult, experiența dobândită ca dezvoltator imobiliar mă ajută să am o viziune holistică asupra proiectelor, integrând toate aspectele esențiale, până la cele mai mici detalii.</p>
-      <p>Cred în spații funcționale în care materialele naturale și organice aduc armonie și echilibru. Pentru mine, designul interior este conexiunea autentică între om și spațiul în care trăiește sau lucrează. Obiectivul meu este de a crea un spațiu care nu doar arată bine, ci se simte bine.</p>
+      <h2>Servicii</h2>
+
+      <h3>Consultanță și concept de design</h3>
+      <p>Construim împreună un concept unic de design, pornind de la nevoile tale, stil de viață și preferințe.</p>
+
+      <h3>Planuri, randări, proiect tehnic</h3>
+      <p>Realizăm planuri detaliate și randări 3D astfel încât să ai o imagine clară despre design, foarte apropiată de rezultatul final.</p>
+
+      <h3>Selecție de materiale, finisaje, mobilier</h3>
+      <p>Te ghidăm în alegerea materialelor, de la finisaje sustenabile la piese de mobilier și decorațiuni. Prioritizăm materialele naturale și soluțiile durabile.</p>
     </div>
   </main>
 
@@ -122,7 +121,6 @@
       }
     }
 
-    // Autoplay slider
     (function(){
       const track = document.getElementById('track');
       let slides = Array.from(track.children);

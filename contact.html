@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>buffa.interiors — Contact</title>
+  <meta name="description" content="Contact — buffa.interiors" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0a0a0a;
+      --pad:20px; --maxw:1100px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:'Work Sans', system-ui, sans-serif;
+      font-weight:100; font-size:15px; line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none; }
+
+    header{ position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:#fff; border-bottom:none; box-shadow:none; }
+    .nav{ display:flex; align-items:center; justify-content:space-between; min-height:68px; padding:0 var(--pad); }
+    .brand{ font-weight:900; font-size:22px; }
+    .menu{ display:flex; gap:18px; font-weight:100; }
+    .menu a{ opacity:.85; padding:8px 6px; font-weight:100; }
+    .menu a:hover{ opacity:1; }
+
+    .burger{ display:none; font-size:26px; background:none; border:none; cursor:pointer; }
+    @media screen and (max-width: 1024px){
+      .menu{ display:none; }
+      .burger{ display:block; }
+      .caption10{ width:85% !important; }
+    }
+
+    .drawer{ width:100%; background:var(--bg); padding:16px var(--pad); display:block; max-height:0; overflow:hidden; transition:max-height 300ms ease; border-top:none; }
+    .drawer.open{ max-height:60vh; }
+    .drawer a{ display:block; padding:14px 0; border-bottom:none; }
+
+    .caption10{ width:35%; margin:60px auto; text-align:center; font-weight:100; font-size:15px; line-height:1.6; }
+    .caption10 h2{ font-weight:300; margin-bottom:1em; }
+    .caption10 h3{ font-weight:300; margin:1em 0 0.4em; font-size:15px; }
+    .caption10 p{ margin:0 0 0.4em; }
+    .caption10 img{ max-width:160px; margin-bottom:20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="interiors.html">buffa.interiors</a>
+      <nav class="menu" aria-label="Meniu principal">
+        <a href="proiecte.html">Proiecte</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="pasi.html">Pașii Colaborării</a>
+        <a href="etape.html">Etapele de Proiectare</a>
+        <a href="oferta.html">Oferta&Tarife</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="burger" aria-label="Meniu" aria-expanded="false" onclick="toggleDrawer()">☰</button>
+    </div>
+  </header>
+
+  <div id="drawer" class="drawer" hidden>
+    <a href="proiecte.html" onclick="toggleDrawer(false)">Proiecte</a>
+    <a href="servicii.html" onclick="toggleDrawer(false)">Servicii</a>
+    <a href="pasi.html" onclick="toggleDrawer(false)">Pașii Colaborării</a>
+    <a href="etape.html" onclick="toggleDrawer(false)">Etapele de Proiectare</a>
+    <a href="oferta.html" onclick="toggleDrawer(false)">Oferta&Tarife</a>
+    <a href="contact.html" onclick="toggleDrawer(false)">Contact</a>
+  </div>
+
+  <main id="start">
+    <div class="caption10">
+      <img src="images/buffaqr.webp" alt="QR buffa.interiors">
+      <h2>Contactează buffa.interiors</h2>
+
+      <h3>Telefon</h3>
+      <p>+40 723319664</p>
+
+      <h3>Email</h3>
+      <p><a href="mailto:interiors@buffa.studio">interiors@buffa.studio</a></p>
+
+      <h3>Instagram</h3>
+      <p><a href="https://www.instagram.com/buffa.interiors" target="_blank">@buffa.interiors</a></p>
+    </div>
+  </main>
+
+  <script>
+    function toggleDrawer(force){
+      const el = document.getElementById('drawer');
+      const btn = document.querySelector('.burger');
+      const willOpen = force === undefined ? !el.classList.contains('open') : !!force;
+      if(willOpen){
+        el.hidden = false;
+        el.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        el.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        setTimeout(()=>{ if(!el.classList.contains('open')) el.hidden = true; }, 320);
+      }
+    }
+  </script>
+</body>
+</html>
